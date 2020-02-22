@@ -103,6 +103,22 @@
 
 
     <script>
+    const btn = document.querySelectorAll(".modal");
+    console.log(btn);
+    btn.forEach(function(button){
+     console.log(button);
+     makeClick(button);
+
+
+    })
+
+
+    function makeClick(el){
+        el.addEventListener("click",function(){
+            console.log("click");
+            
+        })
+    }
 
     </script>
 
