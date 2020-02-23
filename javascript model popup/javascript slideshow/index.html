@@ -85,10 +85,7 @@ const myImages =[
 ];
 
  builder();
-     
-     
-   
-        function builder() {
+      function builder() {
             for (let x = 0; x < myImages.length; x++) {
                 let slide = document.createElement("div");
                 slide.setAttribute("class", "mySlide fade");
@@ -100,7 +97,6 @@ const myImages =[
                 slide.appendChild(img);
                 slide.appendChild(cap);
                 document.querySelector(".slideContainer").appendChild(slide);
-                console.log(slide);
                 let span = document.createElement("span");
                 span.classList.add("dot");
                 span.addEventListener("click", function () {
@@ -108,17 +104,13 @@ const myImages =[
                 })
                 document.querySelector(".indicator").appendChild(span);
             }
-
-           playSlides();
+            playSlides();
         }
  
         function playSlides() {
             const slides = document.querySelectorAll(".mySlide");
             const dots = document.querySelectorAll(".dot");
             const active = document.querySelector(".active");
-            //console.log(slides);
-            //console.log(dots);
-            //console.log(active);
             if (slideIndex + 1 > slides.length) {
                 slideIndex = 0;
             }
@@ -127,14 +119,14 @@ const myImages =[
             })
             slides[slideIndex].style.display = "block";
             slideIndex++;
-            console.log(slideIndex);
             timer = setTimeout(playSlides, 3000);
         }
  
         function moveSlide(num) {
-            console.log(num);
+            slideIndex = num;
+            clearTimeout(timer);
+            playSlides();
         }
-
 
 </script>
 </body>
