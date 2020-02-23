@@ -27,7 +27,7 @@ JAVASCRIPT SLIDESHOW
     width: 25px;
     height: 25px;
     margin: 0;
-    background-color: #ccc;
+    background-color: #e3e;
     border-radius: 50%;
     display: inline-block ;
     cursor: pointer;
@@ -42,7 +42,7 @@ JAVASCRIPT SLIDESHOW
 
 
 .caption {
-    color: #f3f3f3;
+    color: #000;
     font-size: 0.8em;
     padding: 10px;
     position: absolute;
@@ -50,6 +50,12 @@ JAVASCRIPT SLIDESHOW
     width: 100%;
     text-align: center;
 }
+
+ .active {
+            background-color: #666;
+        }
+
+
 </style>
 </head>
 <body>
@@ -85,7 +91,7 @@ const myImages =[
 ];
 
  builder();
-      function builder() {
+       function builder() {
             for (let x = 0; x < myImages.length; x++) {
                 let slide = document.createElement("div");
                 slide.setAttribute("class", "mySlide fade");
@@ -111,6 +117,9 @@ const myImages =[
             const slides = document.querySelectorAll(".mySlide");
             const dots = document.querySelectorAll(".dot");
             const active = document.querySelector(".active");
+            if (active != null) {
+                active.classList.remove("active");
+            }
             if (slideIndex + 1 > slides.length) {
                 slideIndex = 0;
             }
@@ -118,6 +127,7 @@ const myImages =[
                 el.style.display = "none";
             })
             slides[slideIndex].style.display = "block";
+            dots[slideIndex].classList.add("active");
             slideIndex++;
             timer = setTimeout(playSlides, 3000);
         }
