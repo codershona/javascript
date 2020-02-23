@@ -11,7 +11,7 @@
         
         .star {
             font-size: 2.5em;
-            color: #ddd;
+            color: #787878;
             display: inline-block;
         }
         
@@ -27,7 +27,8 @@
             margin: 50px 0;
             padding: 10px;
             border: 1px solid #eee;
-            background-color: #ddd;
+            background-color: #3cb371;
+            height: 40px;
         }
     </style>
 </head>
@@ -62,6 +63,11 @@
    function starRate(e) {
             let t = e.type;
             let starValue = this.starValue;
+             if (t === "click") {
+                if (starValue > 1) {
+                    output.innerHTML = "You rated this " + starValue + " stars";
+                }
+            }
             stars.forEach(function (ele, ind) {
                 if (t === "click") {
                     if (ind < starValue) {
