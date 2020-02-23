@@ -59,38 +59,31 @@
 
   }
 
-  function starRate(e) {
-     let t = e.type;
-    let startValue = this.starValue;
-    stars.forEach(function (ele, ind) {
-      if (t === "click") {
-             if (ind < starValue) {
-                 ele.classList.add("orange");
-             }
-             else {
-                 ele.classList.remove("orange");
-                  }
-                  
-         }
-
-         if (t === "mouseover") {
-             if (ind < starValue) {
-                 ele.classList.add("yellow");
-             }
-             else {
-                 ele.classList.remove("yellow");
-
-             }
-         }
-
-         if (t === "mouseout") {
-             ele.classList.remove("yellow");
-         }
-
-
-      })
-  }
-
+   function starRate(e) {
+            let t = e.type;
+            let starValue = this.starValue;
+            stars.forEach(function (ele, ind) {
+                if (t === "click") {
+                    if (ind < starValue) {
+                        ele.classList.add("orange");
+                    }
+                    else {
+                        ele.classList.remove("orange");
+                    }
+                }
+                if (t === "mouseover") {
+                    if (ind < starValue) {
+                        ele.classList.add("yellow");
+                    }
+                    else {
+                        ele.classList.remove("yellow");
+                    }
+                }
+                if (t === "mouseout") {
+                    ele.classList.remove("yellow");
+                }
+            })
+        }
 
 
 </script>
