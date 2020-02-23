@@ -108,7 +108,31 @@ const myImages =[
                 })
                 document.querySelector(".indicator").appendChild(span);
             }
-            console.log(myImages);
+
+           playSlides();
+        }
+ 
+        function playSlides() {
+            const slides = document.querySelectorAll(".mySlide");
+            const dots = document.querySelectorAll(".dot");
+            const active = document.querySelector(".active");
+            //console.log(slides);
+            //console.log(dots);
+            //console.log(active);
+            if (slideIndex + 1 > slides.length) {
+                slideIndex = 0;
+            }
+            slides.forEach(function (el) {
+                el.style.display = "none";
+            })
+            slides[slideIndex].style.display = "block";
+            slideIndex++;
+            console.log(slideIndex);
+            timer = setTimeout(playSlides, 3000);
+        }
+ 
+        function moveSlide(num) {
+            console.log(num);
         }
 
 
