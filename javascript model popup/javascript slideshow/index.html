@@ -11,8 +11,8 @@ JAVASCRIPT SLIDESHOW
   }
 
 .slideContainer {
-    width: 800px;
-    height: 400px;
+    width: 80%;
+    height: 60%;
     position: relative;
     margin: auto;
     overflow: hidden;
@@ -39,6 +39,17 @@ JAVASCRIPT SLIDESHOW
     text-align: center;
     width: 100%;
 }
+
+
+.caption {
+    color: #f3f3f3;
+    font-size: 0.8em;
+    padding: 10px;
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    text-align: center;
+}
 </style>
 </head>
 <body>
@@ -50,10 +61,54 @@ JAVASCRIPT SLIDESHOW
 
 <script>
 
+let slideIndex = 0;
+let timer;
+const myImages =[
+{
+  "img": "https://via.placeholder.com/250/09f?text=Slideshow1",
+  "caption": "Javascript Slideshow 1 image"
 
+},
 
+{
+  "img": "https://via.placeholder.com/250/e4e?text=Slideshow2",
+  "caption": "Javascript Slideshow 2 image"
 
+},
 
+{
+  "img": "https://via.placeholder.com/250/1f1?text=Slideshow3",
+  "caption": "Javascript Slideshow 3 image"
+
+}
+
+];
+
+ builder();
+     
+     
+   
+        function builder() {
+           
+        
+            for(let x=0;x<myImages.length;x++){
+                let slide = document.createElement("div");
+                slide.setAttribute("class","mySlide fade");
+                let img = document.createElement("img");
+                img.setAttribute("src",myImages[x].img);
+                let cap = document.createElement("div");
+                cap.classList.add("caption");
+                cap.innerText = myImages[x].caption;
+                slide.appendChild(img);
+                slide.appendChild(cap);
+                document.querySelector(".slideContainer").appendChild(slide);
+                console.log(slide);
+                
+                
+            }
+    
+   console.log(myImages);
+        }
 
 
 </script>
