@@ -12,7 +12,7 @@
 
   <style>
 
-  .modalBody {
+  .modalWrapper {
       display: none;
   }
    .modalWrapper.showModal {
@@ -104,6 +104,7 @@
 
     <script>
     const btn = document.querySelectorAll(".modal");
+    const  modalWrapper = document.querySelector(".modalWrapper");
     console.log(btn);
     btn.forEach(function(button){
      console.log(button);
@@ -116,7 +117,9 @@
     function makeClick(el){
         el.addEventListener("click",function(){
             console.log("click");
+          modalWrapper.classList.add("showModal");
             
+
         })
     }
 
